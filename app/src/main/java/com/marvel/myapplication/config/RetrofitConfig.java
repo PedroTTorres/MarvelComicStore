@@ -2,6 +2,7 @@ package com.marvel.myapplication.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.marvel.myapplication.interfaces.Comics;
 
 import java.lang.reflect.Modifier;
 
@@ -24,7 +25,19 @@ public class RetrofitConfig {
                 .baseUrl("http://gateway.marvel.com/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
+
+
+        }
+
+    public Comics getComicsService(){
+        return this.retrofit.create(Comics.class);
+
+
     }
+
+
+
+
 
 
 
