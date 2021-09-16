@@ -15,9 +15,9 @@ import com.marvel.comicstore.R;
 import com.marvel.comicstore.model.ComicData;
 
 import java.util.List;
+import java.util.Locale;
 
 public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder>{
-
     private List<ComicData> mComic;
     private Context mContext;
 
@@ -36,7 +36,7 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
     public void onBindViewHolder(@NonNull LineHolder holder, final int position) {
         ComicData comic = mComic.get(position);
         holder.mTitle.setText(comic.getTitle());
-        holder.mPrice.setText("U$ 50,00"); //TODO: Get from comic
+        holder.mPrice.setText(comic.getPrice()); //TODO: Get from comic
         holder.mMoreButton.setOnClickListener(view -> {
             showMore(comic);
         });
@@ -73,6 +73,8 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
         }
     }
 }
+
+
 
 
 

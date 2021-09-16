@@ -19,7 +19,11 @@ public class Thumbnail implements Serializable {
         return mExtension;
     }
 
+
     public String getUrl() {
-        return getmPath() + "." + getmExtension();
+        if (getmPath() == null || getmExtension() == null) {
+            return null;
+        }
+        return String.format("%s.%s", getmPath(), getmExtension());
     }
 }
