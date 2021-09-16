@@ -25,14 +25,20 @@ public class ComicData implements Serializable {
         private String mType;
 
         @SerializedName("prices")
-        private List<ComicPrice> prices;
+        private List<ComicPrice> mPrices;
+
+        @SerializedName("images")
+        private List<Image> mImages;
+
+        @SerializedName("thumbnail")
+        private Image thumbnail;
 
         public String getTitle() {
                 return mTitle;
         }
 
         public List<ComicPrice> getPrices() {
-                return prices;
+                return mPrices;
         }
 
         public Float getLeastPrice() {
@@ -48,6 +54,10 @@ public class ComicData implements Serializable {
 
         public String getPrice(){
                 return dollarFormat.format(getLeastPrice());
+        }
+
+        public Image getThumbnail() {
+                return thumbnail;
         }
 
 

@@ -1,10 +1,15 @@
 package com.marvel.comicstore.model;
 
+import androidx.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class Thumbnail implements Serializable {
+public class Image implements Serializable {
+
+    final String RESOLUTION = "/portrait_incredible";
+
     @SerializedName("path")
     private String mPath;
 
@@ -19,11 +24,10 @@ public class Thumbnail implements Serializable {
         return mExtension;
     }
 
-
     public String getUrl() {
-        if (getmPath() == null || getmExtension() == null) {
-            return null;
-        }
-        return String.format("%s.%s", getmPath(), getmExtension());
+        return getmPath()+RESOLUTION+"."+getmExtension();
     }
+
+
+
 }

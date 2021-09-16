@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.marvel.comicstore.R;
 import com.marvel.comicstore.model.ComicData;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.PicassoProvider;
 
 import java.util.List;
 import java.util.Locale;
@@ -36,7 +39,15 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
     public void onBindViewHolder(@NonNull LineHolder holder, final int position) {
         ComicData comic = mComic.get(position);
         holder.mTitle.setText(comic.getTitle());
-        holder.mPrice.setText(comic.getPrice()); //TODO: Get from comic
+        holder.mPrice.setText(comic.getPrice());
+        Picasso.get()
+                .load(comic.getThumbnail().getmPath())
+                .fit()
+                .placeholder(R.drawable.empty_image)
+                .error(R.drawable.empty_image)
+                .centerInside()
+                .tag(mContext)
+                .into(holder.mImage);
         holder.mMoreButton.setOnClickListener(view -> {
             showMore(comic);
         });
@@ -63,12 +74,14 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
 
         private TextView mTitle;
         private TextView mPrice;
+        private ImageView mImage;
         private ImageButton mMoreButton;
 
         LineHolder(View itemView) {
             super(itemView);
             mTitle = itemView.findViewById(R.id.list_comic_name);
             mPrice = itemView.findViewById(R.id.list_comic_price);
+            mImage = itemView.findViewById(R.id.icon);
             mMoreButton = itemView.findViewById(R.id.list_comic_details);
         }
     }
