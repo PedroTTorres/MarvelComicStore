@@ -1,4 +1,4 @@
-package com.marvel.myapplication;
+package com.marvel.comicstore;
 
 import org.junit.Test;
 

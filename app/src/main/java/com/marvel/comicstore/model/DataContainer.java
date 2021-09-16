@@ -1,4 +1,4 @@
-package com.marvel.myapplication.modules;
+package com.marvel.comicstore.model;
 
 import com.google.gson.annotations.SerializedName;
 

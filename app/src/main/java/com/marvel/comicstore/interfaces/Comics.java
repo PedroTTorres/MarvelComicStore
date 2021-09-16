@@ -1,8 +1,7 @@
-package com.marvel.myapplication.interfaces;
+package com.marvel.comicstore.interfaces;
 
-import com.marvel.myapplication.modules.ComicData;
-import com.marvel.myapplication.modules.ComicList;
-import com.marvel.myapplication.modules.DataWrapper;
+import com.marvel.comicstore.model.ComicData;
+import com.marvel.comicstore.model.DataWrapper;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

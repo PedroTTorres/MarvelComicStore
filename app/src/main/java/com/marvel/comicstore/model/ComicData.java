@@ -1,4 +1,4 @@
-package com.marvel.myapplication.modules;
+package com.marvel.comicstore.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,15 +8,18 @@ public class ComicData implements Serializable {
         @SerializedName("resourceURI")
         private String mResourceURI;
 
-        @SerializedName("name")
-        private String mName;
+        @SerializedName("title")
+        private String mtitle;
 
         @SerializedName("type")
         private String mType;
 
-        public String getName() {
-            return mName;
+        public String getTitle() {
+            return mtitle;
         }
+
+
+
     }
 
 

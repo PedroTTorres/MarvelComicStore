@@ -1,6 +1,6 @@
-package com.marvel.myapplication.apisetup;
+package com.marvel.comicstore.apisetup;
 
-import static com.marvel.myapplication.apisetup.Authentication.PUBLIC_KEY;
+import static com.marvel.comicstore.apisetup.Authentication.PUBLIC_KEY;
 
 public class Request {
         private String name;

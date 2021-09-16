@@ -1,4 +1,4 @@
-package com.marvel.myapplication;
+package com.marvel.comicstore;
 
 import android.content.Context;
 

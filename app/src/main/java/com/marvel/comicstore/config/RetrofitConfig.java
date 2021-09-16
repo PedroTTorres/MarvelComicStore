@@ -1,8 +1,8 @@
-package com.marvel.myapplication.config;
+package com.marvel.comicstore.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.marvel.myapplication.interfaces.Comics;
+import com.marvel.comicstore.interfaces.Comics;
 
 import java.lang.reflect.Modifier;
 
@@ -22,7 +22,7 @@ public class RetrofitConfig {
                 .create();
 
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://gateway.marvel.com/")
+                .baseUrl("https://gateway.marvel.com/v1/public/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 

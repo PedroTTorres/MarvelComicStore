@@ -1,4 +1,4 @@
-package com.marvel.myapplication.apisetup;
+package com.marvel.comicstore.apisetup;
 
 import android.util.Log;
 
