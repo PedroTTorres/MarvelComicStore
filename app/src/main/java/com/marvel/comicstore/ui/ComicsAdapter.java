@@ -2,6 +2,8 @@ package com.marvel.comicstore.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.marvel.comicstore.R;
@@ -23,6 +26,8 @@ import java.util.Locale;
 public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder>{
     private List<ComicData> mComic;
     private Context mContext;
+    private NavController mNavController;
+    public static final String COMIC = "COMIC";
 
     public ComicsAdapter(Context context, List<ComicData> cList) {
         mContext = context;
@@ -41,7 +46,7 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
         holder.mTitle.setText(comic.getTitle());
         holder.mPrice.setText(comic.getPrice());
         Picasso.get()
-                .load(comic.getThumbnail().getmPath())
+                .load(comic.getThumbnail().getUrl())
                 .fit()
                 .placeholder(R.drawable.empty_image)
                 .error(R.drawable.empty_image)
@@ -53,10 +58,12 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
         });
     }
 
-    private void showMore(ComicData Comic) {
-        Intent intent = new Intent(mContext, ComicActivity.class);
-        intent.putExtra(MainActivity.COMIC, Comic);
-        mContext.startActivity(intent);
+    private void showMore(ComicData comic) {
+        if (mNavController != null) {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(COMIC, comic);
+            mNavController.navigate(R.id.nav_comic, bundle);
+        }
     }
 
     @Override
@@ -68,6 +75,10 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
         int size = getItemCount();
         mComic.addAll(comic);
         notifyItemRangeInserted(size, getItemCount());
+    }
+
+    public void setNavController(NavController mNavController) {
+        this.mNavController = mNavController;
     }
 
     class LineHolder extends RecyclerView.ViewHolder {
@@ -86,6 +97,7 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
         }
     }
 }
+
 
 
 

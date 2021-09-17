@@ -3,4 +3,7 @@
     <string name="msg_loading">Aguarde, carregando.</string>
     <string name="erro_conexao">Erro de Conexão</string>
     <string name="show">Visualizar</string>
+    <string name="store">Loja</string>
+    <string name="cart">Carrinho</string>
+    <string name="comic_details">Detalhes</string>
 </resources>

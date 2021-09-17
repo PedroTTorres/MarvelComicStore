@@ -33,6 +33,9 @@ public class ComicData implements Serializable {
         @SerializedName("thumbnail")
         private Image thumbnail;
 
+        @SerializedName("description")
+        private String mDescription;
+
         public String getTitle() {
                 return mTitle;
         }
@@ -58,6 +61,10 @@ public class ComicData implements Serializable {
 
         public Image getThumbnail() {
                 return thumbnail;
+        }
+
+        public String getmDescription(){
+                return mDescription;
         }
 
 

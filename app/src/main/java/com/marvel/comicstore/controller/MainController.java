@@ -16,7 +16,8 @@ import retrofit2.Response;
 
 public class MainController {
 
-    public static final int COMIC_LIMIT = 20;
+    public static final int COMIC_LIMIT = 30;
+    public static final String IMG_NOT_AVAILABLE = "image_not_available";
 
     Context mContext;
     RetrofitConfig mRetrofitConfig;
@@ -42,7 +43,8 @@ public class MainController {
                          public void onResponse(Call<DataWrapper<ComicData>> call, Response<DataWrapper<ComicData>> response) {
                              DataWrapper<ComicData> result = response.body();
                              if (result != null && result.getData() != null) {
-                                 callback.onSuccessResponse(result.getData().getResults());
+                                 List<ComicData> comics = filter(result.getData().getResults());
+                                 callback.onSuccessResponse(comics);
                              } else {
                                  callback.onSuccessResponse(new ArrayList<>());
                              }
@@ -56,6 +58,17 @@ public class MainController {
 
         );
     }
+
+    private List<ComicData> filter(List<ComicData> comics) {
+        List<ComicData> filteredComics = new ArrayList<>();
+        for (ComicData comic : comics) {
+            if (!comic.getThumbnail().getUrl().contains(IMG_NOT_AVAILABLE)) {
+                filteredComics.add(comic);
+            }
+        }
+        return filteredComics;
+    }
+
 
     public interface ComicDataCallback {
         void onSuccessResponse(List<ComicData> comics);

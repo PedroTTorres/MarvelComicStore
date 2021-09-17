@@ -17,7 +17,7 @@ public class Image implements Serializable {
     private String mExtension;
 
     public String getmPath() {
-        return mPath;
+        return mPath.replace("http://", "https://");
     }
 
     public String getmExtension() {
