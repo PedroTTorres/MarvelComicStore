@@ -48,16 +48,23 @@ import java.util.ArrayList;
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(itemArrayAdapter);
+        mBuy = view.findViewById((R.id.buy));
+        mBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                        buy();
+            }
+        });
 
     }
 
-
+    //Limpando carrinho
     public View.OnClickListener buy(){
-        //TODO: Metodo para esvaziar o carrinho
+        comicsInCart.clear();
 
         return null;
     }
-
+    //Adicionando ao carrinho
     static public View.OnClickListener cartAdd(ComicData comic){
         comicsInCart.add(comic);
         return null;

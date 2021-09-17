@@ -61,6 +61,8 @@ public class StoreFragment extends Fragment {
         mOffset = 0;
     }
 
+
+    //Configuração da RecyclerView
     private void setupRecycler() {
         final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
@@ -102,7 +104,7 @@ public class StoreFragment extends Fragment {
     }
 
     public void start() {
-
+        //Loading
         final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage(getResources().getString(R.string.msg_loading));
@@ -125,7 +127,7 @@ public class StoreFragment extends Fragment {
             }
         });
     }
-
+    //Erro na REST API
     private void msgFailure(){
         View parentLayout = getView().findViewById(android.R.id.content);
         Snackbar.make(parentLayout, getResources().getString(R.string.erro_conexao), Snackbar.LENGTH_LONG).show();

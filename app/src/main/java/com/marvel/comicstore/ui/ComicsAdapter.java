@@ -57,7 +57,7 @@ public class ComicsAdapter extends RecyclerView.Adapter<ComicsAdapter.LineHolder
             showMore(comic);
         });
     }
-
+    //Visão expandida da revista
     private void showMore(ComicData comic) {
         if (mNavController != null) {
             Bundle bundle = new Bundle();

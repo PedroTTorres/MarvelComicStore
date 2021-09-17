@@ -47,6 +47,7 @@ public class ComicFragment extends Fragment {
 
         description.setText(comic.getmDescription());
 
+        //Adiciona revista ao carrinho
         addToCart.setOnClickListener(CartFragment.cartAdd(comic));
 
     }
