@@ -20,6 +20,7 @@ O aplicativo Android desenvolvido com abordagem arquitetônica MVC e usa a API d
 		<th>
 		<img src="https://github.com/PedroTTorres/MarvelComicStore/blob/main/Screenshots/carrinho.jpeg"width="250px">
 		<th>
+	<tr>
 			
 <table>
 
