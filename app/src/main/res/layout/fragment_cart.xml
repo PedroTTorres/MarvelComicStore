@@ -24,7 +24,7 @@
         android:layout_width="406dp"
         android:layout_height="79dp"
         android:layout_marginTop="528dp"
-        android:text="Button"
+        android:text="Comprar"
         app:circularflow_defaultRadius="@dimen/cardview_compat_inset_shadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
