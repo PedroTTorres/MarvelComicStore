@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     android:orientation="vertical"
     tools:context="ui.fragment.ComicFragment">
 
@@ -14,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:layout_marginBottom="26dp"
+        android:background="@android:color/darker_gray"
         android:text="TextView"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/Comic"
@@ -31,27 +33,30 @@
         app:layout_constraintBottom_toTopOf="@+id/Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/Description"
         android:layout_width="match_parent"
         android:layout_height="116dp"
         android:layout_marginBottom="21dp"
+        android:background="@android:color/darker_gray"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/AddtoCart"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/AddtoCart"
-        android:layout_width="321dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
+        android:layout_width="405dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="33dp"
-        android:text="Button"
+        android:background="@color/teal_700"
+        android:backgroundTint="#F44336"
+        android:text="Adicionar ao carrinho"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

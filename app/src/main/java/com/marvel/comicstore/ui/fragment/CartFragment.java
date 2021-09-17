@@ -36,6 +36,7 @@ import java.util.ArrayList;
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_cart, container, false);
+
     }
 
     @Override
@@ -47,13 +48,12 @@ import java.util.ArrayList;
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.setAdapter(itemArrayAdapter);
-        mBuy = view.findViewById(R.id.buy);
 
     }
 
 
     public View.OnClickListener buy(){
-        comicsInCart.clear();
+        //TODO: Metodo para esvaziar o carrinho
 
         return null;
     }
