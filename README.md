@@ -49,7 +49,7 @@ This class contains static methods that manage navigation with the top app bar, 
 -   BottomSheet
 
 ## Estrutura do projeto
-<BR><BR>
+```
 main
 │       │   ├── AndroidManifest.xml
 │       │   ├── java
@@ -80,4 +80,4 @@ main
 │       │   │                   │   ├── ComicFragment.java
 │       │   │                   │   └── StoreFragment.java
 │       │   │                   └── MainActivity.java
-<BR><BR>
+```
